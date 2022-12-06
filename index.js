@@ -7,6 +7,9 @@ const generatePassword = form.querySelector(`#generate`);
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
+    if (website.value.trim().length == 0 || website.value.trim() === "") {
+        return;
+    }
 
     let userDetails = {
         website: website.value,
@@ -26,7 +29,7 @@ form.addEventListener("submit", (e) => {
 });
 
 search.addEventListener(`click`, (e) => {
-    if (website.value.length === 0) {
+    if (website.value.trim().length === 0 || website.value.trim() === "") {
         return;
     }
 
@@ -38,7 +41,7 @@ search.addEventListener(`click`, (e) => {
 });
 
 generatePassword.addEventListener("click", (e) => {
-    if (website.value.length === 0 || email.value.length === 0) {
+    if (website.value.trim().length == 0 || website.value.trim() === "" || email.value.trim().length === 0 || email.value.trim() === "") {
         return;
     }
 
